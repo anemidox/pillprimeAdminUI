@@ -1,4 +1,9 @@
-import { App } from './App.js';
+import { Home } from './components/home/Home.js';
+import { Product } from './components/product/Product.js';
+import { Login } from './components/login/Login.js';
+import { Setting } from './components/setting/Setting.js';
+import { Statistic } from './components/statistic/Statistic.js';
+import { Data } from './components/data/Data.js';
 
 document.getElementById('root').addEventListener('click', (e) => {
   if (e.target.classList.contains('nav-item')) {
@@ -16,11 +21,11 @@ window.onload = () => {
 
 var module = {
   setAllRenderersNull: () => {
-    document.getElementById('homeRender').innerHTML = '';
-    document.getElementById('aboutRender').innerHTML = '';
-    document.getElementById('itemRender').innerHTML = '';
-    document.getElementById('userRender').innerHTML = '';
-    document.getElementById('registerRender').innerHTML = '';
+    document.getElementById('dashboardRender').innerHTML = '';
+    document.getElementById('productRender').innerHTML = '';
+    document.getElementById('loginRender').innerHTML = '';
+    document.getElementById('settingRender').innerHTML = '';
+    document.getElementById('statisticRender').innerHTML = '';
     document.getElementById('dataRender').innerHTML = '';
   },
   renderSpecificItem: (content, renderID) => {
@@ -29,18 +34,18 @@ var module = {
   },
   renderOnePageLoadOrURLChange: () => {
     var currentPath = location.hash.substr(1);
-    if (currentPath === 'home') {
-      module.renderSpecificItem('<my-app></my-app>', 'homeRender');
-    } else if (currentPath === 'item') {
-      module.renderSpecificItem('<app-item></app-item>', 'itemRender');
-    } else if (currentPath === 'user') {
-      module.renderSpecificItem('<app-user></app-user>', 'userRender');
-    } else if (currentPath === 'cash') {
-      module.renderSpecificItem('<app-cash></app-cash>', 'cashRender');
-    } else if (currentPath === 'register') {
-      module.renderSpecificItem('<app-register></app-register>', 'registerRender');
+    if (currentPath === 'dashboard') {
+      module.renderSpecificItem('<my-home></myhome>', 'dashboardRender');
+    } else if (currentPath === 'product') {
+      module.renderSpecificItem('<my-product></my-product>', 'productRender');
+    } else if (currentPath === 'login') {
+      module.renderSpecificItem('<my-login></my-login>', 'loginRender');
+    } else if (currentPath === 'setting') {
+      module.renderSpecificItem('<my-setting></my-settings>', 'settingRender');
+    } else if (currentPath === 'statistic') {
+      module.renderSpecificItem('<my-statistic></my-statistic>', 'statisticRender');
     } else if (currentPath === 'data') {
-      module.renderSpecificItem('<app-data></app-data>', 'dataRender');
+      module.renderSpecificItem('<my-data></-data>', 'dataRender');
     } else {
       module.renderSpecificItem('<p>Page not found</p>', 'homeRender'); // Simple 404 handling
     }
