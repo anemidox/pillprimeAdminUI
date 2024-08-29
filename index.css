@@ -6,22 +6,23 @@
 
 body {
     font-family: Arial, sans-serif;
+    background-color: #333; /* Dark background for the whole page */
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
 }
 
 #root {
     display: flex;
     height: 100vh;
+    width: 100vw; /* Ensure full viewport width */
 }
 
 .container {
     width: 250px;
-    background-color: #333;
+    background-color: #333; /* Dark background for the sidebar */
     color: white;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Align items in a vertical column */
 }
 
 .nav {
@@ -34,20 +35,20 @@ body {
 .nav-item {
     padding: 20px;
     cursor: pointer;
-    border-bottom: 1px solid #444;
+    border-bottom: 1px solid #444; /* Darker border for separation */
     transition: background-color 0.3s;
 }
 
 .nav-item:hover {
-    background-color: #555;
+    background-color: #555; /* Slightly lighter background on hover */
 }
 
 .nav-item.active {
-    background-color: #555;
+    background-color: #555; /* Same color for active item */
 }
 
 .nav-item:last-child {
-    border-bottom: none;
+    border-bottom: none; /* Remove border for the last item */
 }
 
 .nav-item:focus {
@@ -57,8 +58,8 @@ body {
 .container .logo {
     padding: 20px;
     text-align: center;
-    background-color: #222;
-    border-bottom: 1px solid #444;
+    background-color: #222; /* Even darker background for logo section */
+    border-bottom: 1px solid #444; /* Dark border for logo section */
 }
 
 .container .logo h1 {
@@ -67,6 +68,8 @@ body {
 }
 
 .main-content {
-    flex-grow: 1;
+    flex-grow: 1; /* Allow the main content to take up remaining space */
     padding: 20px;
+    background-color: #444; /* Slightly lighter background for content area */
+    color: white;
 }
